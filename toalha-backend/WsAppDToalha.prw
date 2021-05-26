@@ -19,40 +19,48 @@ API de integração para o App Dia Toalha.
 /*/
 WSRESTFUL DiaToalha DESCRIPTION 'API de integração para o Cadastro de Acessos do CRM.'
 
-  WSMETHOD GET g1;
+  WSMETHOD POST p1;
     DESCRIPTION '';
-    WSSYNTAX '/api/diatoalha/v1/info' ;
-    PATH '/api/diatoalha/v1/info' ;
+    WSSYNTAX '/api/diatoalha/v1/toalha' ;
+    PATH '/api/diatoalha/v1/toalha' ;
     TTALK 'v1' ;
     PRODUCES APPLICATION_JSON
 
 ENDWSRESTFUL
 
-/*/{Protheus.doc} GET g1
-/api/diatoalha/v1/info
-
+/*/{Protheus.doc} POST p1
+/api/diatoalha/v1/toalha
+Inclui Toalha Personalizada
 
 @author		Jose Camilo
 @since		25/05/2021
 @version	1.0
 /*/
-WSMETHOD GET g1 WSSERVICE DiaToalha
+WSMETHOD POST p1 WSSERVICE DiaToalha
 
 Local lRet			  := .T.
 Local oResponse   := JsonObject():New()
-Local cAuth      := AllTrim(httpHeader('Authorization'))
+Local oBody       := JsonObject():New()
+Local cBody       := self:GetContent()
 
 Local cErroBlk    := ''
 Local oException	:= ErrorBlock({|e| cErroBlk := + e:Description + e:ErrorStack, lRet := .F. })
 
 If lRet
   Begin Sequence
+    oBody:fromJson(cBody)
+     oBody['codigo'] := GETSX8NUM("PAZ","PAZ_CODIGO")
 
-    If ValType(cAuth) == 'U'
-      conout('APPTOALHA Auth indefinido')
-    Else
-      conout('APPTOALHA', cAuth)
-    EndIf
+    RecLock('PAZ', .T.)
+      PAZ->PAZ_CODIGO  := oBody['codigo']
+      PAZ->PAZ_NOME    := oBody['nome']
+      PAZ->PAZ_TAMANH  := oBody['tamanho']
+      PAZ->PAZ_COR     := oBody['cor']
+      PAZ->PAZ_MATERI  := oBody['material']
+      PAZ->PAZ_PESO    := oBody['peso']
+      PAZ->PAZ_ESTAMP  := oBody['estampa']
+    MsUnlock()
+    ConfirmSX8()
 
   End Sequence
 
@@ -60,8 +68,7 @@ If lRet
 
   // Verifica errorBlock
   If lRet
-    oResponse['status'] = 'ok'
-    self:SetResponse(oResponse:toJson())
+    self:SetResponse(oBody:toJson())
   Else
     oResponse['code'] := 1
     oResponse['status'] := 500
