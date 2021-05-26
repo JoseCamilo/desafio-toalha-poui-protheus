@@ -1,0 +1,46 @@
+.toalha {
+  width: 250px;
+  height: 400px;
+}
+
+.vermelho{
+  background-color: red;
+  border-style: solid;
+  border-color: coral;
+  border-bottom: 50px double coral;
+}
+.branco{
+  background-color: white;
+  border-style: solid;
+  border-color: grey;
+  border-bottom: 50px double grey;
+}
+.marrom{
+  background-color: maroon;
+  border-style: solid;
+  border-color: burlywood;
+  border-bottom: 50px double burlywood;
+}
+.verde{
+  background-color: green;
+  border-style: solid;
+  border-color: chartreuse;
+  border-bottom: 50px double chartreuse;
+}
+.preto{
+  background-color: black;
+  border-style: solid;
+  border-color: gray;
+  border-bottom: 50px double grey;
+}
+.azul{
+  background-color: blue;
+  border-style: solid;
+  border-color: aqua;
+  border-bottom: 50px double aqua;
+}
+
+.estampa{
+  margin-top: 90px;
+  margin-left: 70px;
+}
