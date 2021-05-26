@@ -82,7 +82,7 @@ App Web para criar toalha
 User Function NovaToalha
 Local aSize := MsAdvSize(.F.)
 
-DEFINE DIALOG oDlg TITLE "App Toalha" From aSize[7],0 To aSize[6],aSize[5] PIXEL
+DEFINE DIALOG oDlg From aSize[7],0 To aSize[6],aSize[5] PIXEL
   FwCallApp( 'toalha-frontend', oDlg, /*oEngine*/, /*oChannel*/, /*cHost*/, 'AppDToalha')
 oDlg:Activate()
 
