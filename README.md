@@ -28,28 +28,30 @@ Um app para criar toalhas personalizadas para celebrar o Dia do Orgulho Nerd!
 
 # Passo a passo implementação
 
-1. Criar um serviço de WebService Rest no Protheus, além na conexão via smartclient
+1. Ter um ambiente ERP Protheus com versões mínimas de LIB 20200214 e Appserver 7.00.191205P
 
-2. Configurar no ini do appserver da conexão via smartclient, a chave App_Environment conforme [documentação](https://tdn.totvs.com/display/framework/FwCallApp+-+Abrindo+aplicativos+Web+no+Protheus):
+2. Criar um serviço de WebService Rest no Protheus, além na conexão via smartclient
+
+3. Configurar no ini do appserver da conexão via smartclient, a chave App_Environment conforme [documentação](https://tdn.totvs.com/display/framework/FwCallApp+-+Abrindo+aplicativos+Web+no+Protheus):
 
 [General]
 App_Environment={nome-do-ambiente-utilizado}
 
-3. Alterar a propriedade __urlBackEnd__ do arquivo [environment.ts](https://github.com/JoseCamilo/desafio-toalha-poui-protheus/blob/main/toalha-frontend/src/environments/environment.ts), colocando o endereço do seu serviço WebService criado no Passo 1
+4. Alterar a propriedade __urlBackEnd__ do arquivo [environment.ts](https://github.com/JoseCamilo/desafio-toalha-poui-protheus/blob/main/toalha-frontend/src/environments/environment.ts), colocando o endereço do seu serviço WebService criado no Passo 1
 
-4. Realizar o build do projeto Angular [toalha-frontend](https://github.com/JoseCamilo/desafio-toalha-poui-protheus/tree/main/toalha-frontend). Para isso você precisará do [Node.js](https://nodejs.org/) e [Angular](https://angular.io/) instalados em sua máquina, executar a [instalação de pacotes](https://docs.npmjs.com/cli/v7/commands/npm-install) e a [construção do projeto](https://angular.io/cli/build).
+5. Realizar o build do projeto Angular [toalha-frontend](https://github.com/JoseCamilo/desafio-toalha-poui-protheus/tree/main/toalha-frontend). Para isso você precisará do [Node.js](https://nodejs.org/) e [Angular](https://angular.io/) instalados em sua máquina, executar a [instalação de pacotes](https://docs.npmjs.com/cli/v7/commands/npm-install) e a [construção do projeto](https://angular.io/cli/build).
 
-5. Colocar os arquivos gerados pela build em uma nova pasta com o nome de toalha-frontend, zipar a pasta e alterar a extensão para .app
+6. Colocar os arquivos gerados pela build em uma nova pasta com o nome de toalha-frontend, zipar a pasta e alterar a extensão para .app
 
-6.  Aplicar no ERP Protheus os dicionários da pasta [dicionarios](https://github.com/JoseCamilo/desafio-toalha-poui-protheus/tree/main/dicionarios)
+7.  Aplicar no ERP Protheus os dicionários da pasta [dicionarios](https://github.com/JoseCamilo/desafio-toalha-poui-protheus/tree/main/dicionarios)
 
-7. Compilar no serviço de WebService do Protheus o recurso [WsAppDToalha.prw](https://github.com/JoseCamilo/desafio-toalha-poui-protheus/blob/main/toalha-backend/WsAppDToalha.prw)
+8. Compilar no serviço de WebService do Protheus o recurso [WsAppDToalha.prw](https://github.com/JoseCamilo/desafio-toalha-poui-protheus/blob/main/toalha-backend/WsAppDToalha.prw)
 
-8. Compilar no ambiente de conexão de smartclient o recurso [AppDToalha.prw](https://github.com/JoseCamilo/desafio-toalha-poui-protheus/blob/main/toalha-backend/AppDToalha.prw) e o recurso que você criou no Passo 5, toalha-frontend.app
+9. Compilar no ambiente de conexão de smartclient o recurso [AppDToalha.prw](https://github.com/JoseCamilo/desafio-toalha-poui-protheus/blob/main/toalha-backend/AppDToalha.prw) e o recurso que você criou no Passo 5, toalha-frontend.app
 
 __Importante: Habilitar a compilação de recursos diversos para ser possível compilar o recurso toalha-frontend.app. No VsCode a configuração é enableExtensionsFilter=false__
 
-9. Adicionar no Menu no Protheus ou executar a função U_AppDToalha
+10. Adicionar no Menu no Protheus ou executar a função U_AppDToalha
 
 
 # Desafio Dia do Orgulho Nerd TOTVS!
