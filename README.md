@@ -45,7 +45,7 @@ App_Environment={nome-do-ambiente-utilizado}
 7. Compilar no serviço de WebService do Protheus o recurso [WsAppDToalha.prw](https://github.com/JoseCamilo/desafio-toalha-poui-protheus/blob/main/toalha-backend/WsAppDToalha.prw)
 
 8. Compilar no ambiente de conexão de smartclient o recurso [AppDToalha.prw](https://github.com/JoseCamilo/desafio-toalha-poui-protheus/blob/main/toalha-backend/AppDToalha.prw) e o recurso que você criou no Passo 5, toalha-frontend.app
-#####Importante: Habilitar a compilação de recursos diversos para ser possível compilar o recurso toalha-frontend.app. No VsCode a configuração é enableExtensionsFilter=false.
+__Importante: Habilitar a compilação de recursos diversos para ser possível compilar o recurso toalha-frontend.app. No VsCode a configuração é enableExtensionsFilter=false__
 
 9. Adicionar no Menu no Protheus ou executar a função U_AppDToalha
 
