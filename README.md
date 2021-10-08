@@ -77,8 +77,4 @@ https://tdn.totvs.com/pages/viewpage.action?pageId=327320989
 #### Linha RM
 https://tdn.totvs.com/pages/viewpage.action?pageId=516194871
 
-Os 30 primeiros que participarem irão receber um kit especial, então corra! Complete o desafio, grave um vídeo da execução de, no máximo, 60 segundos, e poste o projeto no Git para que ele possa ser avaliado. Participe e envie para: https://forms.gle/a43Eevozqz73fDSb6. Em caso de dúvidas sobre o desafio, converse com Ricardo Mansano - mansano@totvs.com.br
-
-Pronto, agora sim você está preparado para celebrar o seu orgulho nerd! 
-
 # Feliz Dia da Toalha! 
